@@ -16,17 +16,20 @@ def main():
 3. Quit
 """)
     option = input("Please enter an option: ")
-    if option == '1':
-        password = input("Please enter your password to encode: ")
-        print(f"Your password has been encoded and stored!")
+    if option == "1":
+        password_input = input("Please enter your password to encode: ")
+        encoded_password = encoder(password_input)
+        print("Your password has been encoded and stored!")
 
-    elif option == '2':
-        print(f"The encoded password is {encoder(password)}, and the original password is {password}")
+    elif option == "2":
+        decoded_password = None  # decode(encoded_password)
+        print(f'The encoded password is {encoder(password_input)}, and the original password is {decoded_password}')
 
     elif option == '3':
-        exit()
+        break
+
     else:
-        print("Invalid option")
+        print("Invalid option, please try again!")
 
 if __name__ == "__main__":
     main()
