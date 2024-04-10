@@ -1,3 +1,5 @@
+# Oskar Dolega 04/09/2024
+
 def encoder(password):
     encoded_password = ""
     for char in str(password):
@@ -8,10 +10,28 @@ def encoder(password):
         encoded_password += str(char)
     return encoded_password
 
+def decode(password):
+
+    decoded_password = ""
+
+    for char in password:
+        char = int(char)
+        char -= 3
+
+        if char <= -1:
+            char += 10
+
+        char = str(char)
+
+        decoded_password += char
+
+    return decoded_password
+
+
 def main():
+    encoded_password = ""
 
     while True:
-        encoded_password = ""
         print("""Menu
 -------------
 1. Encode
